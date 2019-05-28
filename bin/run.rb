@@ -1,6 +1,10 @@
 require_relative '../config/environment'
 
-sheeran = Artist.new("Ed Sheeran")
-event1 = Event.new("Fun Fest", sheeran, "New York", "June 3, 2019")
-fan1 = Fans.new("Jessica")
-ticket1 = Ticket.new(fan1, event1)
+puts "Hello"
+
+puts Fan.find_event("Ed Sheeran")
+# puts fan1.buy_ticket(event1, 2)
+puts Fan.search_artist("New York")
+puts Fan.find_range_of_events(00000000,99999999)
+# binding.pry
+# 0

@@ -1,10 +1,11 @@
-class CreateEvents < ActiveRecord::Migration
+class CreateEvents < ActiveRecord::Migration[4.2]
   def change
     create_table :events do |t|
       t.string :name
-      t.string :artist
+      t.integer :artist_id
       t.string :location
       t.string :date
-      t.string :duration 
+      t.string :duration
+    end
   end
 end

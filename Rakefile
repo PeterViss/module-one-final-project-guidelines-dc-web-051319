@@ -1,6 +1,5 @@
-require_relative 'config/environment'
+require_relative './config/environment'
 require 'sinatra/activerecord/rake'
-require_relative '../db/migrate'
 
 desc 'starts a console'
 task :console do

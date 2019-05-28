@@ -10,6 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 7) do
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.string "genre"
+    t.string "price"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.integer "artist_id"
+    t.string "location"
+    t.integer "date"
+    t.string "status"
+    t.integer "ticket_amount"
+  end
+
+  create_table "fans", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "tickets", force: :cascade do |t|
+    t.integer "fan_id"
+    t.integer "event_id"
+  end
 
 end
