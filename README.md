@@ -1,4 +1,4 @@
-# Module One Final Project Guidelines
+<!-- # Module One Final Project Guidelines
 
 Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
 
@@ -56,4 +56,30 @@ Projects need to be approved prior to launching into them, so take some time to 
 ```ruby
 # in config/environment.rb add this line:
 ActiveRecord::Base.logger = nil
-```
+``` -->
+
+FANS
+Fan wants to go see an artist through an event
+Fan needs to look up artist to see where the event is
+Fan needs to be able to look up location to see which artists are playing
+Fan needs to look up the correct dates for the event and artists
+Fan needs to buy a ticket (price fluctuates based upon artist)
+
+
+TICKETS
+fans
+events
+
+EVENTS
+Duration
+Initialized with the tickets
+takes in the artist that is playing
+Event can be cancelled if something goes wrong (writes notification)
+Sold Out method (how many tickets are sold)
+Every time a fan buys a ticket, ticket availability decreases
+
+
+ARTISTS
+name
+genre
+price 
