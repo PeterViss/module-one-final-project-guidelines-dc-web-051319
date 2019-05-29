@@ -19,7 +19,7 @@ fan8 = Fan.create(name: "Matt")
 fan9 = Fan.create(name: "Meghan")
 fan10 = Fan.create(name: "Sanuun")
 fan11 = Fan.create(name: "Jian")
-fan12 = Fan.create(name: "Sean")
+
 event1 = Event.create(name: "Fun Fest", artist_id: sheeran.id, location: "New York", date: "June 3, 2019 6:30", status: "Open", ticket_amount: 300)
 event2 = Event.create(name: "Holidays", artist_id: drake.id, location: "New York", date: "Dec 20, 2019 7:00", status: "Open", ticket_amount: 500)
 

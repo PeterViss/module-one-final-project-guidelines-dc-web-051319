@@ -5,18 +5,17 @@ class Event < ActiveRecord::Base
 
 
 
-  def sold_out
-    if self.ticket_amount == 0
-      self.status == 'closed'
-    else
-      self.status == 'open'
-    end
-
+  def check_status(status)
+      self.status = status
   end
 
-  def availability
-    return @ticket_amount
+  def change_ticket_amount(amount)
+      self.ticket_amount -= amount
   end
+
+  # def availability
+  #   return @ticket_amount
+  # end
 
   # def artist
   #   return self.artist

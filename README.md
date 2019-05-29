@@ -59,10 +59,10 @@ ActiveRecord::Base.logger = nil
 ``` -->
 
 FANS
-Fan wants to go see an artist through an event
-Fan needs to look up artist to see where the event is
+<!-- Fan wants to go see an artist through an event
+Fan needs to look up artist to see where the event is -->
 Fan needs to be able to look up location to see which artists are playing
-Fan needs to look up the correct dates for the event and artists
+Given a range of dates, the even should return the events within that range.
 Fan needs to buy a ticket (price fluctuates based upon artist)
 
 
@@ -71,15 +71,26 @@ fans
 events
 
 EVENTS
-Duration
+<!-- Duration
 Initialized with the tickets
-takes in the artist that is playing
-Event can be cancelled if something goes wrong (writes notification)
-Sold Out method (how many tickets are sold)
+takes in the artist that is playing -->
+<!-- Event can be cancelled if something goes wrong (writes notification) -->
+<!-- Sold Out method (how many tickets are sold) -->
 Every time a fan buys a ticket, ticket availability decreases
 
 
 ARTISTS
 name
 genre
-price 
+price
+
+
+
+
+
+RUN.RB
+Welcome message
+Search by location, artist, or dates?
+have the fan buy the ticket
+if fan wants to see ticket, itll show
+cancel ticket if they want to (.destroy)
