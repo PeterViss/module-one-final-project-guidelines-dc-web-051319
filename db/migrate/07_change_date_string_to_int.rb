@@ -1,5 +1,5 @@
 class ChangeDateStringToInt < ActiveRecord::Migration[4.2]
   def change
-    change_column :events, :date, :integer
+    change_column :events, :date, :datetime
   end
 end

@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 7) do
     t.string "name"
     t.integer "artist_id"
     t.string "location"
-    t.integer "date"
+    t.datetime "date"
     t.string "status"
     t.integer "ticket_amount"
   end

@@ -4,7 +4,6 @@ class Fan < ActiveRecord::Base
 
 
   def self.find_event(artist)
-
     events = Ticket.all.collect do |ticket|
       ticket.event.artist.name == artist
       ticket.event
@@ -21,20 +20,24 @@ class Fan < ActiveRecord::Base
   end
 
   def self.find_range_of_events(start_date, end_date)
-    Ticket.all.collect do |ticket|
-      ticket.event.date >= start_date && ticket.event.date <= end_date
+      events = Ticket.all.collect do |ticket|
+        ticket.event.date >= start_date && ticket.event.date <= end_date
         ticket.event
       end
-  end
+      events.uniq
+    end
+
 
   def buy_ticket(event, amount)
-    Ticket.all.each do |ticket|
-      if ticket.event.status == 'open'
+    events = Ticket.all.collect do |ticket|
+      ticket.event == event
+    end
+        events.each do |ticket|
+      if ticket.status == 'open'
         ticket.event.ticket_amount -= amount
-      elsif ticket.event.status == 'closed'
+      elsif ticket.status == 'closed'
         "Sorry all sold out."
       end
     end
   end
-
 end

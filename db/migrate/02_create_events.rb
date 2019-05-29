@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[4.2]
       t.string :name
       t.integer :artist_id
       t.string :location
-      t.string :date
+      t.datetime :date
       t.string :duration
     end
   end
