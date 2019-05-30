@@ -86,7 +86,7 @@ event23 = Event.create(name: "Mohawks and Hairdye", artist_id: artist23.id, loca
 event24 = Event.create(name: "Lets Just Have A Good Time", artist_id: artist24.id, location: "Charlottesville", date: "September 21, 2019 7:00", status: "Open", ticket_amount: 700)
 event25 = Event.create(name: "Stoney Maloney", artist_id: artist25.id, location: "New York", date: "November 30, 2019 7:30", status: "Open", ticket_amount: 1500)
 event26 = Event.create(name: "The Orchestral Concerto", artist_id: artist26.id, location: "Washington DC", date: "September 22, 2019 8:00", status: "Open", ticket_amount: 500)
-
+event27 = Event.create(name: "White Iverson", artist_id: artist25.id, location: "Washington DC", date: "August 20, 2019 7:00", status: "Open", ticket_amount: 1000)
 ticket1 = Ticket.create(fan_id: fan1.id, event_id: event1.id)
 ticket2 = Ticket.create(fan_id: fan4.id, event_id: event2.id)
 ticket3 = Ticket.create(fan_id: fan7.id, event_id: event2.id)
