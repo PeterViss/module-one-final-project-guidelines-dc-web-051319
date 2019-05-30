@@ -65,14 +65,17 @@ require_relative '../config/environment'
   start_date = gets.chomp.strip
   end_date = gets.chomp.strip
   event = Fan.find_event(artist,start_date,end_date)
+  open_event = event.select do |event|
+    event.status == 'open'
+  end
   puts "Here are the events your artist is performing during those dates:"
-    event.each do |event|
-  puts "event name = #{event.name}"
-  puts "event location = #{event.location}"
-  puts "event date = #{event.date}"
-  puts "event status = #{event.status}"
-  puts "event Available Tickets = #{event.ticket_amount}"
+    open_event.each do |event|
 
+  puts "event name = #{open_event.name}"
+  puts "event location = #{open_event.location}"
+  puts "event date = #{open_event.date}"
+  puts "event status = #{open_event.status}"
+  puts "event Available Tickets = #{open_event.ticket_amount}"
     end
 
 loop do
@@ -92,6 +95,8 @@ loop do
   end
     end
     #puts "Here are the events your artist is performing during those dates : #{event}"
+
+
 
     puts "Which event would you like to go to: please enter event ID number."
     user_response = gets.chomp.strip
