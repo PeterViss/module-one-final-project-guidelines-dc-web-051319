@@ -46,8 +46,10 @@ require_relative '../config/environment'
     city = gets.chomp.strip
   end
   artist_within_city = Fan.search_artist(city)
-  puts "Here are the artists in your city #{artist_within_city}"
-
+  puts "Here are the artists in your city :"
+    artist_within_city.each do |artist|
+      puts "name = #{artist}"
+    end
 
 
 
@@ -63,28 +65,36 @@ require_relative '../config/environment'
   start_date = gets.chomp.strip
   end_date = gets.chomp.strip
   event = Fan.find_event(artist,start_date,end_date)
-  puts "Here are the events your artist is performing during those dates : #{event}"
+  puts "Here are the events your artist is performing during those dates:"
+    event.each do |event|
+  puts "event name = #{event.name}"
+  puts "event location = #{event.location}"
+  puts "event date = #{event.date}"
+  puts "event status = #{event.status}"
+  puts "event Available Tickets = #{event.ticket_amount}"
 
+    end
 
-
+loop do
   puts "Are you interested in any of these events?"
   response = gets.chomp.strip
   if response == "yes"
-    puts "Which event would you like to go to: please enter event ID number."
-    user_response = gets.chomp.strip
-  elsif response == "no"
-    while response == "no"
+
+    break
+  end
+  if response == "no"
       puts "Please enter other dates with your artist"
       artist = gets.chomp.strip
       start_date = gets.chomp.strip
       end_date = gets.chomp.strip
-      Fan.find_event(artist,start_date,end_date)
-      user_response
+    event = Fan.find_event(artist,start_date,end_date)
+    puts "Here are the events your artist is performing during those dates : #{event}"
+  end
     end
     #puts "Here are the events your artist is performing during those dates : #{event}"
-  end
 
-
+    puts "Which event would you like to go to: please enter event ID number."
+    user_response = gets.chomp.strip
 puts "Would you like to buy a ticket"
 response = gets.chomp.strip
 if response == "yes"
@@ -99,4 +109,5 @@ if response == "yes"
     Event.update(chosen.id, status: "Closed")
   end
 elsif response == "no"
+  puts "Good Bye"
 end

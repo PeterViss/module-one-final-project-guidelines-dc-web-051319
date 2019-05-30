@@ -11,7 +11,7 @@ class Fan < ActiveRecord::Base
   end
 
   def self.find_event(artist,start_date,end_date)
-    x = Event.all.select{|event| event.artist.name == artist }
+    x = Event.all.select{|event| event.artist.name == artist}
     x.collect do |event|
       if event.date >= start_date && event.date <= end_date
          event
@@ -22,6 +22,7 @@ class Fan < ActiveRecord::Base
       # else
       #   puts "No Dates Available"
     end
+
   end
 
 
