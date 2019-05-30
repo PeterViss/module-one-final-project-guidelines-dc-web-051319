@@ -20,10 +20,11 @@ require_relative '../config/environment'
 
 puts "Which artist would you like to see?"
 artist = gets.chomp
-puts "When would you like to see them?"
+ puts "When would you like to see them?"
 start_date = gets.chomp
 end_date = gets.chomp
 puts "Here are the events your artist is performing during those dates : #{Fan.find_event(artist,start_date,end_date)}"
+
 
 # puts "What dates were you looking for?"
 # start_date = gets.chomp
