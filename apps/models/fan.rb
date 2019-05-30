@@ -34,37 +34,37 @@ class Fan < ActiveRecord::Base
   #   end
 
 
-  def buy_ticket(event, amount)
-    events = Ticket.all.select{|ticket|ticket.event.name == event}
-    events.collect do |event|
-      if amount <= event.event.ticket_amount
-        Ticket.create(fan_id: self.id, event_id: event.id)
-         event.event.check_status('Open')
-         event.event.change_ticket_amount(amount)
+  # def buy_ticket(event, amount)
+  #   events = Ticket.all.select{|ticket|ticket.event.name == event}
+  #   events.collect do |event|
+  #     if amount <= event.event.ticket_amount
+  #       Ticket.create(fan_id: self.id, event_id: event.id)
+  #        event.event.check_status('Open')
+  #        event.event.change_ticket_amount(amount)
+  #
+  #     else
+  #       event.event.check_status('Closed')
+  #       puts "Sorry all sold out."
+  #     end
+  #   end
+  # end
+  #
+  # def welcome
+  #   puts "Welcome, do you have an account with us?"
+  # end
 
-      else
-        event.event.check_status('Closed')
-        puts "Sorry all sold out."
-      end
-    end
-  end
+  # def self.user_name
+  #   puts "Do you have a username?"
+  #       gets.chomp
+  #     if "yes"
+  #       "Please enter your username."
+  #       name = gets.chomp
+  #       Fan.find_by(name: "#{name}")
+  #     elsif "no"
+  #       "Please create a username"
+  #       name = gets.chomp
+  #         Fan.create(name: "#{name}")
+  #     end
 
-  def welcome
-    puts "Welcome, do you have an account with us?"
-  end
-
-  def self.user_name
-    puts "Do you have a username?"
-        gets.chomp
-      if "yes"
-        "Please enter your username."
-        name = gets.chomp
-        Fan.find_by(name: "#{name}")
-      elsif "no"
-        "Please create a username"
-        name = gets.chomp
-          Fan.create(name: "#{name}")
-        end
-
-  end
+  # end
 end
